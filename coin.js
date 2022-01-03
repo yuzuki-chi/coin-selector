@@ -1,12 +1,16 @@
+import { Gpio } from "onoff";
+const coin = new Gpio(5, 'in', 'both');
+
 class Input {
     cb = () => {};
-    coin = {
-        cb: () => {},
-        watch: cb => {
-            this.coin.cb = cb;
-        },
-        unwatch: () => {},
-    };
+    // coin = {
+    //     cb: () => {},
+    //     watch: cb => {
+    //         this.coin.cb = cb;
+    //     },
+    //     unwatch: () => {},
+    // };
+    coin = new Gpio(5, 'in', 'both');
     pulse = 0;
     state = 0;  // 0: await, 1: detected
 
