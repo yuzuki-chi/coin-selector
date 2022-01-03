@@ -72,11 +72,13 @@ class Input {
 }
 
 const input = new Input();
+let count = 0;
 input.watch((err, amount) => {
     if (err) {
         throw err;
     }
-    console.log(`amount: ${amount}`);
+    count += amount;
+    console.log(`amount: ${amount} (${count})`);
 });
 
 // void async function() {
