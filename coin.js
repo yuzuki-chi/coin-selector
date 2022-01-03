@@ -63,12 +63,12 @@ class Input {
     }
 
     // コイン投入 (いらない)
-    async input(pulse) {
-        for (let i = 0; i < pulse * 2; i++) {
-            this.coin.cb(null, i % 2);
-            await new Promise(resolve => setTimeout(resolve, 50));
-        }
-    }
+    // async input(pulse) {
+    //     for (let i = 0; i < pulse * 2; i++) {
+    //         this.coin.cb(null, i % 2);
+    //         await new Promise(resolve => setTimeout(resolve, 50));
+    //     }
+    // }
 }
 
 const input = new Input();
@@ -79,9 +79,9 @@ input.watch((err, amount) => {
     console.log(`amount: ${amount}`);
 });
 
-void async function() {
-    for (let i = 0; i < 7; i++) {
-        await new Promise(r => setTimeout(r, 1000));
-        await input.input(i);
-    }
-}();
+// void async function() {
+    // for (let i = 0; i < 7; i++) {
+    //     await new Promise(r => setTimeout(r, 1000));
+    //     await input.input(i);
+    // }
+// }();
